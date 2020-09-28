@@ -119,6 +119,7 @@ Hold %s to center the shape on the click origin
 Hold %s to displace the shape's origin""",
 		["configurable_shift", "configurable_ctrl", "configurable_alt"]
 	),
+	"Text": Tool.new("Text", "Text", "text", preload("res://src/Tools/Text.tscn")),
 }
 
 var _tool_button_scene: PackedScene = preload("res://src/Tools/ToolButton.tscn")
