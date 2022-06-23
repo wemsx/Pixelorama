@@ -49,7 +49,7 @@ func commit_action(_cel: Image, _project: Project = Global.current_project) -> v
 	var image := Image.new()
 	image.copy_from(_cel)
 	if _project.has_selection and selection_checkbox.pressed:
-		var selection_rectangle: Rect2 = _project.get_selection_rectangle()
+		var selection_rectangle: Rect2 = _project.selection_image.get_used_rect()
 		pivot = (
 			selection_rectangle.position
 			+ ((selection_rectangle.end - selection_rectangle.position) / 2)
