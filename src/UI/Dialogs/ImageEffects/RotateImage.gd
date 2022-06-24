@@ -56,7 +56,7 @@ func commit_action(_cel: Image, _project: Project = Global.current_project) -> v
 		)
 		selection_size = selection_rectangle.size
 
-		var selection: Image = _project.bitmap_to_image(_project.selection_bitmap)
+		var selection: Image = _project.selection_image
 		selection_tex.create_from_image(selection, 0)
 
 		if type_option_button.text != "Nearest neighbour (Shader)":
