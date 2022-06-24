@@ -49,14 +49,14 @@ func commit_action(_cel: Image, _project: Project = Global.current_project) -> v
 	var image := Image.new()
 	image.copy_from(_cel)
 	if _project.has_selection and selection_checkbox.pressed:
-		var selection_rectangle: Rect2 = _project.selection_image.get_used_rect()
+		var selection_rectangle: Rect2 = _project.selection_map.get_used_rect()
 		pivot = (
 			selection_rectangle.position
 			+ ((selection_rectangle.end - selection_rectangle.position) / 2)
 		)
 		selection_size = selection_rectangle.size
 
-		var selection: Image = _project.selection_image
+		var selection: Image = _project.selection_map
 		selection_tex.create_from_image(selection, 0)
 
 		if type_option_button.text != "Nearest neighbour (Shader)":
